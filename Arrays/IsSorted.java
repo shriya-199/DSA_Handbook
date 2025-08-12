@@ -1,4 +1,4 @@
-package Arrays;
+
 class Solution
 {
     public static boolean isSorted(int[] arr)

@@ -1,4 +1,4 @@
-package Arrays;
+
 import java.util.*;
 public class LeftRotateByDPlaces {
     public static void reverse(int[] arr, int start,int end)

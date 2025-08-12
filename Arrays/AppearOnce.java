@@ -1,4 +1,4 @@
-package Arrays;
+
 
 public class AppearOnce {
     public static void main(String args[])

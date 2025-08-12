@@ -1,4 +1,4 @@
-package Arrays;
+
 
 public class MoveZerosToEnd {
     public static void swap(int[] arr,int i,int j)

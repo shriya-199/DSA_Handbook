@@ -1,4 +1,4 @@
-package Arrays;
+
 class largest
 {
     public static int largest(int[] arr)

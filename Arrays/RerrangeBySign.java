@@ -1,6 +1,7 @@
+import java.util.*;
 public class RerrangeBySign {
     public static void main(String[] args) {
-        int[] arr={3,1,-2,-5,2,-4};
+        int[] arr={-3,-1,-2,-5,2,-4};
         int n = arr.length;
         /**Brute Force 
         int pIndx =0;
@@ -27,6 +28,7 @@ public class RerrangeBySign {
         {
             System.out.print(i+" ");
         }*/ 
+        /**No.Of Positives and Negatives are Equal 
         int pos=0;
         int neg=1;
         int[] ans = new int[n];
@@ -39,8 +41,42 @@ public class RerrangeBySign {
                 ans[neg] = arr[i];
                 neg += 2;
             }
+        }*/
+        int pIndx=0;
+        int nIndx=0;
+        int p[] = new int[n];
+        int[] neg = new int[n];
+        for(int i =0;i<n;i++)
+        {
+            if(arr[i]<0)
+            {
+                neg[nIndx++]=arr[i];
+            }
+            else
+            {
+                p[pIndx++]=arr[i];
+            }
         }
-        for(int i: ans)
+        for(int i =0;i<Math.min(pIndx,nIndx);i++)
+        {
+            arr[2*i]=p[i];
+            arr[2*i+1]=neg[i];
+        }
+        if(pIndx>nIndx)
+        {
+            for(int i =2*nIndx;i<n;i++)
+            {
+                arr[i]=p[i-nIndx];
+            }
+        }
+        else
+        {
+            for(int i =2*pIndx;i<n;i++)
+            {
+                arr[i]=neg[i-pIndx];
+            }
+        }
+        for(int i: arr)
         {
             System.out.print(i+" ");
         } 
